@@ -1,29 +1,28 @@
 
 # PART 1
 input = [l.strip() for l in open('day 9\input.txt').readlines()]
-# DIRS = {'R': (0, 1), 'L': (0, -1), 'D': (1, 0), 'U': (-1, 0)}
-# def addt(x, y):
-#     if len(x) == 2:
-#         return (x[0] + y[0], x[1] + y[1])
-# def dist(x, y):
-#     return max(abs(x[0]-y[0]), abs(x[1]-y[1]))
-# head = (0, 0)
-# tail = (0, 0)
-# tail_locs = set()
-# tail_locs.add(tail)
-# for move in input:
-#     dir, steps = move.split(" ")
-#     steps = int(steps)
-#     for i in range(steps):
-#         new_head = addt(head, DIRS[dir])
-#         if dist(new_head, tail) > 1:
-#             tail = head
-#             tail_locs.add(tail)
-#         head = new_head
-# print(len(tail_locs))
+DIRS = {'R': (0, 1), 'L': (0, -1), 'D': (1, 0), 'U': (-1, 0)}
+def addt(x, y):
+    if len(x) == 2:
+        return (x[0] + y[0], x[1] + y[1])
+def dist(x, y):
+    return max(abs(x[0]-y[0]), abs(x[1]-y[1]))
+head = (0, 0)
+tail = (0, 0)
+tail_locs = set()
+tail_locs.add(tail)
+for move in input:
+    dir, steps = move.split(" ")
+    steps = int(steps)
+    for i in range(steps):
+        new_head = addt(head, DIRS[dir])
+        if dist(new_head, tail) > 1:
+            tail = head
+            tail_locs.add(tail)
+        head = new_head
+print(len(tail_locs))
 
 # PART 2
-
 
 R = [[0, 0] for _ in range(10)]
 tail_locs = set()
