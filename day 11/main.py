@@ -1,17 +1,10 @@
 import operator
 input = [l.strip() for l in open('day 11\input.txt').readlines()]
 # items = [[] for y in range(7)]
-new_items = [[] for y in range(7)]
-operations = []
-test = []
-monkey = 0
-op = {'+': lambda x, y: x + y,
-      '-': lambda x, y: x - y,
-      '*': lambda x, y: x * y,
-      '/': lambda x, y: x / y}
-monkeys = {
-
-}
+op = {
+    '+': lambda x, y: x + y, 
+    '*': lambda x, y: x * y,}
+monkeys = {}
 items = []
 mod = 1
 for data in input:
