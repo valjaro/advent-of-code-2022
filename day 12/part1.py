@@ -1,6 +1,9 @@
-input = [l.strip() for l in open('day 12\input.txt').readlines()]
 
 import string
+
+input = [line.strip() for line in open('day 12\input.txt').readlines()]
+
+
 alphabet = list(string.ascii_lowercase)
 DIRS = {'R': (0, 1), 'L': (0, -1), 'D': (1, 0), 'U': (-1, 0)}
 def addt(x, y):

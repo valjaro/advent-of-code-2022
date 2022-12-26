@@ -1,13 +1,17 @@
-input = [l.strip() for l in open('day 12\input.txt').readlines()]
-
 import string
+
+
+input = [l.strip() for l in open('day 12\input.txt').readlines()]
 alphabet = list(string.ascii_lowercase)
 DIRS = {'R': (0, 1), 'L': (0, -1), 'D': (1, 0), 'U': (-1, 0)}
+
 def addt(x, y):
     if len(x) == 2:
         return (x[0] + y[0], x[1] + y[1])
+
 def dist(x, y):
     return max(abs(x[0]-y[0]), abs(x[1]-y[1]))
+
 matrix = []
 possible_starts = []
 for i, line in enumerate(input):
@@ -97,5 +101,4 @@ for i in possible_starts:
     dist = minDistance(matrix, x, y)
     if dist >0:
         results.append(dist)
-    # print(dist)
 print(min(results))
